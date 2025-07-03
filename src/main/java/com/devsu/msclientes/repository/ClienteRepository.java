@@ -17,15 +17,16 @@ public interface ClienteRepository extends JpaRepository<Cliente, Integer>{
             "c.persona.direccion, " +
             "c.persona.telefono, " +
             "c.persona.identificacion, " +
+            "c.password," +
             "c.persona.id, " +
             "c.estado) " +
             "FROM Cliente c WHERE c.persona.id = :personaId")
     ClienteDto findClienteDtoByPersonaId(@Param("personaId") Integer personaId);
 
-    @Query("SELECT new com.devsu.msclientes.dto.ClienteDto(c.id, c.persona.nombre, c.persona.genero, c.persona.direccion, c.persona.telefono, c.persona.identificacion, c.persona.id, c.estado) FROM Cliente c")
+    @Query("SELECT new com.devsu.msclientes.dto.ClienteDto(c.id, c.persona.nombre, c.persona.genero, c.persona.direccion, c.persona.telefono, c.persona.identificacion, c.password, c.persona.id, c.estado) FROM Cliente c")
     List<ClienteDto> obtenerClientesConDatosPersona();
 
-    @Query("SELECT new com.devsu.msclientes.dto.ClienteDto(c.id, c.persona.nombre, c.persona.genero, c.persona.direccion, c.persona.telefono, c.persona.identificacion, c.persona.id, c.estado) " +
+    @Query("SELECT new com.devsu.msclientes.dto.ClienteDto(c.id, c.persona.nombre, c.persona.genero, c.persona.direccion, c.persona.telefono, c.persona.identificacion, c.password, c.persona.id, c.estado) " +
             "FROM Cliente c WHERE c.id = :idCliente")
     ClienteDto obtenerClientesConDatosPersonaById(@Param("idCliente") Integer idCliente);
 }

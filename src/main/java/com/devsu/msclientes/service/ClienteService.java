@@ -84,6 +84,7 @@ public class ClienteService {
             persona.setIdentificacion(clienteDto.getIdentificacion());
             personaRepository.save(persona);
 
+            cliente.setPassword(clienteDto.getPassword());
             cliente.setEstado(clienteDto.getEstado());
             clienteRepository.save(cliente);
 
