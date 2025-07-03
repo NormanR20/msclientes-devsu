@@ -61,19 +61,13 @@ CREATE TABLE IF NOT EXISTS `devsubd`.`Cliente` (
 DROP TABLE IF EXISTS `devsubd`.`cuenta` ;
 
 CREATE TABLE IF NOT EXISTS `devsubd`.`Cuenta` (
-  `numero_cuenta` VARCHAR(45) NOT NULL,
-  `tipo_cuenta` VARCHAR(45) NOT NULL,
-  `saldo_inicial` DECIMAL(15,2) NOT NULL,
-  `estado` TINYINT(1) NOT NULL,
-  `cliente_id` INT NOT NULL,
-  PRIMARY KEY (`numero_cuenta`),
-  INDEX `fk_cuenta_cliente_idx` (`cliente_id` ASC) VISIBLE,
-  CONSTRAINT `fk_cuenta_cliente`
-    FOREIGN KEY (`cliente_id`) REFERENCES `devsubd`.`Cliente` (`id`)
-    ON DELETE CASCADE
-    ON UPDATE CASCADE
-)
-ENGINE = InnoDB;
+    `numero_cuenta` VARCHAR(45) NOT NULL,
+    `tipo_cuenta` VARCHAR(45) NOT NULL,
+    `saldo_inicial` DECIMAL(15,2) NOT NULL,
+    `estado` TINYINT(1) NOT NULL,
+    `cliente_id` VARCHAR(45) NOT NULL,
+    PRIMARY KEY (`numero_cuenta`)
+)ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
