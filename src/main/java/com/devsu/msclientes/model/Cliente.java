@@ -22,4 +22,5 @@ public class Cliente {
     @ManyToOne
     @JoinColumn(name = "persona_id", referencedColumnName = "id")
     private Persona persona;
+
 }
