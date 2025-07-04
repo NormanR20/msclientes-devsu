@@ -1,0 +1,15 @@
+version: '3.8'
+services:
+  msclientes:
+    build:
+      context: .
+      dockerfile: dockerfile
+    container_name: msclientes-app
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://host.docker.internal:3306/devsubd
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: root
+      SPRING_JPA_HIBERNATE_DDL_AUTO: update
+    ports:
+      - "8080:8080"
+    restart: on-failure

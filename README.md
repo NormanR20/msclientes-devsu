@@ -8,7 +8,10 @@ Compila el proyecto de microservicio de clientes
 4) Ejecutar el comando "mvn clean compile"
 5) Luego dentro del ide de intelij click en el boton ejecutar
 
-Ejecutar dockerfile (ejecutar en terminal):
+Ejecutar script de mysql proporcionado (Dockerfile proporcionado trabaja con bd local)
 
-1) docker build -t msclientes .
-2) docker run -p 8080:8080
+Ejecutar dockerfile:
+
+1) ir a esta url https://hub.docker.com/r/nraudales2/msclientes
+2) ejecutar docker pull nraudales2/msclientes:latest
+3) docker run -p 8080:8080 nraudales2/msclientes:latest
